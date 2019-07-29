@@ -45,6 +45,7 @@
             this.btnTutup = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -149,7 +150,7 @@
             // 
             // buttonAdmin2
             // 
-            this.buttonAdmin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.buttonAdmin2.BackColor = System.Drawing.SystemColors.Control;
             this.buttonAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin2.Location = new System.Drawing.Point(1724, 1);
             this.buttonAdmin2.Margin = new System.Windows.Forms.Padding(2);
@@ -188,9 +189,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1063, 221);
+            this.pictureBox3.Location = new System.Drawing.Point(1081, 227);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(627, 587);
+            this.pictureBox3.Size = new System.Drawing.Size(587, 587);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
@@ -203,6 +204,14 @@
             this.PresenceCheck.Name = "PresenceCheck";
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 35;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.Location = new System.Drawing.Point(1065, 209);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(619, 625);
+            this.panel3.TabIndex = 36;
             // 
             // formAwal
             // 
@@ -220,6 +229,7 @@
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formAwal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -249,6 +259,7 @@
         private System.Windows.Forms.Button btnTutup;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel PresenceCheck;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
