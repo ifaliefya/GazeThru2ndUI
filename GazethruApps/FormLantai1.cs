@@ -52,12 +52,12 @@ namespace GazethruApps
             wx.Add(0); //kembali
             wy.Add(0);
 
-            wx[0] = 1620; //next
-            wy[0] = 370;
-            wx[1] = 255; //prev
-            wy[1] = 140;
-            wx[2] = 1100; //back
-            wy[2] = 900;
+            wx[0] = 1500; //next
+            wy[0] = 310;
+            wx[1] = 325; //prev
+            wy[1] = 310;
+            wx[2] = 1600; //back
+            wy[2] = 925;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
@@ -94,21 +94,21 @@ namespace GazethruApps
 
             if (lap==0)
             {
-                wy[0]--;
-                wy[1]++;
-                wx[2]--;
+                wx[0]++;
+                wx[1]--;
+                wy[2]--;
             }
             if (lap == 1)
             {
-                wy[0]++;
-                wy[1]--;
-                wx[2]++;
+                wx[0]--;
+                wx[1]++;
+                wy[2]++;
             }
-            if(wy[0]==140)
+            if(wx[0]==1800)
             {
                 lap = 1;
             }
-            if(wy[0]==440)
+            if(wx[0]==1500)
             {
                 lap = 0;
             }

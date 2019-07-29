@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1920, 38);
@@ -149,7 +149,7 @@
             // 
             // buttonAdmin2
             // 
-            this.buttonAdmin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
+            this.buttonAdmin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.buttonAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin2.Location = new System.Drawing.Point(1724, 1);
             this.buttonAdmin2.Margin = new System.Windows.Forms.Padding(2);
@@ -162,24 +162,26 @@
             // 
             // btnMini
             // 
+            this.btnMini.BackColor = System.Drawing.SystemColors.Control;
             this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMini.Location = new System.Drawing.Point(1841, 1);
             this.btnMini.Name = "btnMini";
             this.btnMini.Size = new System.Drawing.Size(37, 35);
             this.btnMini.TabIndex = 32;
             this.btnMini.Text = "-";
-            this.btnMini.UseVisualStyleBackColor = true;
+            this.btnMini.UseVisualStyleBackColor = false;
             this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
             // btnTutup
             // 
+            this.btnTutup.BackColor = System.Drawing.SystemColors.Control;
             this.btnTutup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTutup.Location = new System.Drawing.Point(1880, 1);
             this.btnTutup.Name = "btnTutup";
             this.btnTutup.Size = new System.Drawing.Size(37, 35);
             this.btnTutup.TabIndex = 33;
             this.btnTutup.Text = "x";
-            this.btnTutup.UseVisualStyleBackColor = true;
+            this.btnTutup.UseVisualStyleBackColor = false;
             this.btnTutup.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox3
@@ -206,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.pictureBox3);

@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.label1.Location = new System.Drawing.Point(887, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 32);
@@ -72,7 +72,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(1086, 900);
+            this.btnHome.Location = new System.Drawing.Point(1086, 773);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 56);
             this.btnHome.TabIndex = 9;
@@ -87,7 +87,7 @@
             this.btnTentang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTentang.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTentang.ForeColor = System.Drawing.Color.White;
-            this.btnTentang.Location = new System.Drawing.Point(300, 200);
+            this.btnTentang.Location = new System.Drawing.Point(1520, 650);
             this.btnTentang.Name = "btnTentang";
             this.btnTentang.Size = new System.Drawing.Size(220, 56);
             this.btnTentang.TabIndex = 24;
@@ -102,7 +102,7 @@
             this.btnPrestasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrestasi.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestasi.ForeColor = System.Drawing.Color.White;
-            this.btnPrestasi.Location = new System.Drawing.Point(700, 300);
+            this.btnPrestasi.Location = new System.Drawing.Point(700, 170);
             this.btnPrestasi.Name = "btnPrestasi";
             this.btnPrestasi.Size = new System.Drawing.Size(155, 56);
             this.btnPrestasi.TabIndex = 25;
@@ -117,7 +117,7 @@
             this.btnKegiatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKegiatan.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKegiatan.ForeColor = System.Drawing.Color.White;
-            this.btnKegiatan.Location = new System.Drawing.Point(1620, 470);
+            this.btnKegiatan.Location = new System.Drawing.Point(300, 350);
             this.btnKegiatan.Name = "btnKegiatan";
             this.btnKegiatan.Size = new System.Drawing.Size(155, 56);
             this.btnKegiatan.TabIndex = 26;
@@ -132,7 +132,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(622, 437);
+            this.pictureBox1.Location = new System.Drawing.Point(622, 307);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(710, 430);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.PresenceCheck);

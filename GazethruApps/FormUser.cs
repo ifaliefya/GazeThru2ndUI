@@ -30,12 +30,12 @@ namespace GazethruApps
             wx.Add(0);
             wy.Add(0);
 
-            wx[0] = 300; //lokasi awal btnInformasi
-            wy[0] = 200;
-            wx[1] = 1620; //lokasi awal btnPeta
-            wy[1] = 430;
-            wx[2] = 770; //lokasi awal btnBack
-            wy[2] = 900;
+            wx[0] = 375; //lokasi awal btnInformasi 375; 400
+            wy[0] = 400;
+            wx[1] = 1420; //lokasi awal btnPeta 1420; 400
+            wy[1] = 400;
+            wx[2] = 884; //lokasi awal btnBack 884; 940
+            wy[2] = 940;
 
             kendaliuser = new KendaliTombol();
             kendaliuser.TambahTombol(btnInfo, new FungsiTombol(InfoTekan));
@@ -73,21 +73,21 @@ namespace GazethruApps
 
             if (lap == 0)
             {
-                wy[0]++;
-                wy[1]--;
-                wx[2]++;
+                wx[0]--;
+                wx[1]++;
+                wy[2]--;
             }
             if (lap == 1)
             {
-                wy[0]--;
-                wy[1]++;
-                wx[2]--;
+                wx[0]++;
+                wx[1]--;
+                wy[2]++;
             }
-            if (wy[0] == 500)
+            if (wx[0] == 75)
             {
                 lap = 1;
             }
-            if (wy[0] == 200)
+            if (wx[0] == 375)
             {
                 lap = 0;
             }

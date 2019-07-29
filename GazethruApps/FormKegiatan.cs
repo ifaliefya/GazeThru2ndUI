@@ -46,14 +46,14 @@ namespace GazethruApps
             wx.Add(0); //add btnHome
             wy.Add(0);
 
-            wx[0] = 230;//posisi awal btnPrev 
-            wy[0] = 170;
-            wx[1] = 1620; //posisi awal btnNext
-            wy[1] = 400;
-            wx[2] = 300; //posisi awal btnBack 
-            wy[2] = 900;
-            wx[3] = 1620; //posisi awal btnHome
-            wy[3] = 900;
+            wx[0] = 375;//posisi awal btnPrev 375; 342
+            wy[0] = 342;
+            wx[1] = 1500; //posisi awal btnNext 1500; 342
+            wy[1] = 342;
+            wx[2] = 450; //posisi awal btnBack 450; 670
+            wy[2] = 670;
+            wx[3] = 1330; //posisi awal btnHome 1330; 970
+            wy[3] = 970;
 
             kendali = new KendaliTombol();
             kendali.TambahTombol(btnBack, new FungsiTombol(TombolBackTekan));
@@ -171,25 +171,26 @@ namespace GazethruApps
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
             btnHome.Location = new Point((int)wx[3], (int)wy[3]);
 
-            if (lap==0)
+
+            if (lap == 0)
             {
-                wy[0]++;
-                wy[1]--;
-                wx[2]++;
-                wx[3]--;
+                wx[0]--;
+                wx[1]++;
+                wy[2]++;
+                wy[3]--;
             }
-            if(lap==1)
+            if (lap == 1)
             {
-                wy[0]--;
-                wy[1]++;
-                wx[2]--;
-                wx[3]++;
+                wx[0]++;
+                wx[1]--;
+                wy[2]--;
+                wy[3]++;
             }
-            if(wy[0]==470)
+            if (wy[2] == 950)
             {
                 lap = 1;
             }
-            if(wy[0]==170)
+            if (wy[2] == 650)
             {
                 lap = 0;
             }

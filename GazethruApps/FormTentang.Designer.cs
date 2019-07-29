@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.label1.Location = new System.Drawing.Point(866, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 32);
@@ -78,7 +78,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(1620, 900);
+            this.btnHome.Location = new System.Drawing.Point(1330, 970);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 56);
             this.btnHome.TabIndex = 12;
@@ -92,7 +92,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(300, 900);
+            this.btnBack.Location = new System.Drawing.Point(450, 670);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(155, 56);
             this.btnBack.TabIndex = 11;
@@ -107,9 +107,9 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.ForeColor = System.Drawing.Color.White;
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(230, 170);
+            this.btnPrev.Location = new System.Drawing.Point(375, 342);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(104, 39);
+            this.btnPrev.Size = new System.Drawing.Size(50, 100);
             this.btnPrev.TabIndex = 13;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
@@ -121,9 +121,9 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(1620, 400);
+            this.btnNext.Location = new System.Drawing.Point(1500, 342);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(104, 39);
+            this.btnNext.Size = new System.Drawing.Size(50, 100);
             this.btnNext.TabIndex = 14;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -155,11 +155,12 @@
             // 
             // panelView
             // 
+            this.panelView.BackColor = System.Drawing.Color.White;
             this.panelView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelView.Controls.Add(this.textBoxIsi);
             this.panelView.Controls.Add(this.lblJudul);
             this.panelView.Controls.Add(this.pictureBox1);
-            this.panelView.Location = new System.Drawing.Point(440, 88);
+            this.panelView.Location = new System.Drawing.Point(440, 60);
             this.panelView.Margin = new System.Windows.Forms.Padding(2);
             this.panelView.Name = "panelView";
             this.panelView.Size = new System.Drawing.Size(1048, 590);
@@ -214,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panelView);

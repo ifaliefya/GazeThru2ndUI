@@ -57,7 +57,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(1100, 900);
+            this.btnBack.Location = new System.Drawing.Point(1600, 925);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(155, 56);
             this.btnBack.TabIndex = 21;
@@ -72,16 +72,16 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.ForeColor = System.Drawing.Color.White;
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(300, 145);
+            this.btnPrev.Location = new System.Drawing.Point(325, 310);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(40, 40);
+            this.btnPrev.Size = new System.Drawing.Size(100, 40);
             this.btnPrev.TabIndex = 24;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
             this.panel1.Controls.Add(this.labelNamaLantai);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -93,7 +93,7 @@
             // 
             this.labelNamaLantai.AutoSize = true;
             this.labelNamaLantai.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNamaLantai.ForeColor = System.Drawing.Color.White;
+            this.labelNamaLantai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.labelNamaLantai.Location = new System.Drawing.Point(860, 2);
             this.labelNamaLantai.Name = "labelNamaLantai";
             this.labelNamaLantai.Size = new System.Drawing.Size(201, 32);
@@ -115,20 +115,20 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.textBoxIsi);
             this.panel2.Controls.Add(this.labelJudul);
             this.panel2.Controls.Add(this.pictureBoxRuang);
-            this.panel2.Location = new System.Drawing.Point(0, 624);
+            this.panel2.Location = new System.Drawing.Point(0, 690);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1920, 270);
+            this.panel2.Size = new System.Drawing.Size(1490, 270);
             this.panel2.TabIndex = 49;
             // 
             // textBoxIsi
             // 
-            this.textBoxIsi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.textBoxIsi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIsi.ForeColor = System.Drawing.Color.White;
+            this.textBoxIsi.ForeColor = System.Drawing.Color.Black;
             this.textBoxIsi.Location = new System.Drawing.Point(539, 74);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
@@ -140,9 +140,9 @@
             // labelJudul
             // 
             this.labelJudul.AutoSize = true;
-            this.labelJudul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.labelJudul.BackColor = System.Drawing.SystemColors.Control;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.ForeColor = System.Drawing.Color.White;
+            this.labelJudul.ForeColor = System.Drawing.Color.Black;
             this.labelJudul.Location = new System.Drawing.Point(534, 32);
             this.labelJudul.Name = "labelJudul";
             this.labelJudul.Size = new System.Drawing.Size(192, 25);
@@ -162,7 +162,7 @@
             // panelPeta
             // 
             this.panelPeta.Controls.Add(this.pbPetaLantai);
-            this.panelPeta.Location = new System.Drawing.Point(439, 55);
+            this.panelPeta.Location = new System.Drawing.Point(439, 90);
             this.panelPeta.Name = "panelPeta";
             this.panelPeta.Size = new System.Drawing.Size(1048, 544);
             this.panelPeta.TabIndex = 55;
@@ -171,7 +171,7 @@
             // 
             this.pbPetaLantai.BackColor = System.Drawing.Color.White;
             this.pbPetaLantai.Image = ((System.Drawing.Image)(resources.GetObject("pbPetaLantai.Image")));
-            this.pbPetaLantai.Location = new System.Drawing.Point(3, 0);
+            this.pbPetaLantai.Location = new System.Drawing.Point(3, 1);
             this.pbPetaLantai.Name = "pbPetaLantai";
             this.pbPetaLantai.Size = new System.Drawing.Size(1048, 541);
             this.pbPetaLantai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,7 +181,7 @@
             // PresenceCheck
             // 
             this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
-            this.PresenceCheck.Location = new System.Drawing.Point(955, 535);
+            this.PresenceCheck.Location = new System.Drawing.Point(954, 1070);
             this.PresenceCheck.Name = "PresenceCheck";
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 56;
@@ -193,9 +193,9 @@
             this.btnNext2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext2.ForeColor = System.Drawing.Color.White;
             this.btnNext2.Image = ((System.Drawing.Image)(resources.GetObject("btnNext2.Image")));
-            this.btnNext2.Location = new System.Drawing.Point(1620, 456);
+            this.btnNext2.Location = new System.Drawing.Point(1500, 310);
             this.btnNext2.Name = "btnNext2";
-            this.btnNext2.Size = new System.Drawing.Size(40, 40);
+            this.btnNext2.Size = new System.Drawing.Size(100, 40);
             this.btnNext2.TabIndex = 57;
             this.btnNext2.UseVisualStyleBackColor = false;
             this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btnNext2);
             this.Controls.Add(this.PresenceCheck);
