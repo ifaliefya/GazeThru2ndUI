@@ -178,6 +178,8 @@ namespace GazethruApps
             {
                 formLantai1 FormLantai1 = formLantai1.getInstance();
                 FormLantai1.Show();
+                FormLantai1.GetLantaiPic(1);
+                FormLantai1.LoadPointer(1);
                 timer1.Stop();
                 kendali.Close();
                 this.Close();
@@ -193,8 +195,10 @@ namespace GazethruApps
 
             if (e.status)
             {
-                formLantai2 FormLantai2 = formLantai2.getInstance();
-                FormLantai2.Show();
+                formLantai1 FormLantai1 = formLantai1.getInstance();
+                FormLantai1.Show();
+                FormLantai1.GetLantaiPic(2);
+                FormLantai1.LoadPointer(2);
                 timer1.Stop();
                 kendali.Close();
                 this.Close();
@@ -211,8 +215,10 @@ namespace GazethruApps
 
             if (e.status)
             {
-                formLantai3 FormLantai3 = formLantai3.getInstance();
-                FormLantai3.Show();
+                formLantai1 FormLantai1 = formLantai1.getInstance();
+                FormLantai1.Show();
+                FormLantai1.GetLantaiPic(3);
+                FormLantai1.LoadPointer(3);
                 timer1.Stop();
                 kendali.Close();
                 this.Close();

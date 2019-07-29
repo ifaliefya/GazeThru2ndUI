@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EyeXFramework">
-      <HintPath>E:\Library\EyeXFramework.dll</HintPath>
+      <HintPath>..\..\Pengujian Gazethru\panel1\bin\Debug\EyeXFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,7 +54,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tobii.EyeX.Client.Net20">
-      <HintPath>E:\Library\Tobii.EyeX.Client.Net20.dll</HintPath>
+      <HintPath>..\..\Pengujian Gazethru\panel1\bin\Debug\Tobii.EyeX.Client.Net20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -445,6 +445,8 @@
     <None Include="Resources\kuning52px.png" />
     <None Include="Resources\defaultPic.jpg" />
     <None Include="Resources\defaultPicRuang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Tobii.EyeX.Client.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

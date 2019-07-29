@@ -47,7 +47,7 @@ namespace GazethruApps
         double ThresholdKorelasi = 0.8;
 
         int DurasiJarakEuclidean = 100;
-        int DurasiKorelasiPearson = 100;
+        int DurasiKorelasiPearson = 80;
 
         EyeXHost Host;
         GazePointDataStream DataStream;
