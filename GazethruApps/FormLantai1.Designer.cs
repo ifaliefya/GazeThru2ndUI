@@ -162,9 +162,9 @@
             // panelPeta
             // 
             this.panelPeta.Controls.Add(this.pbPetaLantai);
-            this.panelPeta.Location = new System.Drawing.Point(439, 90);
+            this.panelPeta.Location = new System.Drawing.Point(550, 100);
             this.panelPeta.Name = "panelPeta";
-            this.panelPeta.Size = new System.Drawing.Size(1048, 544);
+            this.panelPeta.Size = new System.Drawing.Size(810, 540);
             this.panelPeta.TabIndex = 55;
             // 
             // pbPetaLantai
@@ -173,7 +173,7 @@
             this.pbPetaLantai.Image = ((System.Drawing.Image)(resources.GetObject("pbPetaLantai.Image")));
             this.pbPetaLantai.Location = new System.Drawing.Point(3, 1);
             this.pbPetaLantai.Name = "pbPetaLantai";
-            this.pbPetaLantai.Size = new System.Drawing.Size(1048, 541);
+            this.pbPetaLantai.Size = new System.Drawing.Size(810, 540);
             this.pbPetaLantai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPetaLantai.TabIndex = 50;
             this.pbPetaLantai.TabStop = false;
