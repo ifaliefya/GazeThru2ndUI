@@ -58,12 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminAwal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,18 +186,6 @@
     <Compile Include="FormLantai1.Designer.cs">
       <DependentUpon>FormLantai1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLantai2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLantai2.Designer.cs">
-      <DependentUpon>FormLantai2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLantai3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLantai3.Designer.cs">
-      <DependentUpon>FormLantai3.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPeta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,77 +211,8 @@
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="KendaliTombol.cs" />
-    <Compile Include="Kegiatan1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Kegiatan1.Designer.cs">
-      <DependentUpon>Kegiatan1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Kegiatan2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Kegiatan2.Designer.cs">
-      <DependentUpon>Kegiatan2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai1_01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai1_01.Designer.cs">
-      <DependentUpon>Lantai1_01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai1_02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai1_02.Designer.cs">
-      <DependentUpon>Lantai1_02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai2_01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai2_01.Designer.cs">
-      <DependentUpon>Lantai2_01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai2_02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai2_02.Designer.cs">
-      <DependentUpon>Lantai2_02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai3_01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai3_01.Designer.cs">
-      <DependentUpon>Lantai3_01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lantai3_02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Lantai3_02.Designer.cs">
-      <DependentUpon>Lantai3_02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Prestasi1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Prestasi1.Designer.cs">
-      <DependentUpon>Prestasi1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Prestasi2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Prestasi2.Designer.cs">
-      <DependentUpon>Prestasi2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisiElektro.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="VisiElektro.Designer.cs">
-      <DependentUpon>VisiElektro.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminAwal.resx">
       <DependentUpon>AdminAwal.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,12 +277,6 @@
     <EmbeddedResource Include="FormLantai1.resx">
       <DependentUpon>FormLantai1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLantai2.resx">
-      <DependentUpon>FormLantai2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLantai3.resx">
-      <DependentUpon>FormLantai3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormPeta.resx">
       <DependentUpon>FormPeta.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,36 +289,6 @@
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kegiatan1.resx">
-      <DependentUpon>Kegiatan1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kegiatan2.resx">
-      <DependentUpon>Kegiatan2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai1_01.resx">
-      <DependentUpon>Lantai1_01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai1_02.resx">
-      <DependentUpon>Lantai1_02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai2_01.resx">
-      <DependentUpon>Lantai2_01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai2_02.resx">
-      <DependentUpon>Lantai2_02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai3_01.resx">
-      <DependentUpon>Lantai3_01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lantai3_02.resx">
-      <DependentUpon>Lantai3_02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Prestasi1.resx">
-      <DependentUpon>Prestasi1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Prestasi2.resx">
-      <DependentUpon>Prestasi2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -422,9 +299,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="VisiElektro.resx">
-      <DependentUpon>VisiElektro.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

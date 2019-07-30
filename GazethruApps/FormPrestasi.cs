@@ -239,20 +239,38 @@ namespace GazethruApps
 
             if (e.status)
             {
-                ++counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    kendali.Close();
+
+                    ++counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
         private void PrevTekan(ArgumenKendaliTombol e)
         {
             if (e.status)
             {
-                --counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                try
+                {
+                    kendali.Close();
+
+                    --counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 

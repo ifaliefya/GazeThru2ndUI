@@ -205,11 +205,6 @@ namespace GazethruApps
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             ++counter;
@@ -275,12 +270,19 @@ namespace GazethruApps
 
             if (e.status)
             {
-                kendali.Close();
+                try
+                {
+                    kendali.Close();
 
-                ++counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                    ++counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
 
@@ -293,12 +295,19 @@ namespace GazethruApps
 
             if (e.status)
             {
-                kendali.Close();
+                try
+                {
+                    kendali.Close();
 
-                --counter;
-                nowShowing = ShowID[counter];
-                PopulateButton();
-                LoadContent(nowShowing);
+                    --counter;
+                    nowShowing = ShowID[counter];
+                    PopulateButton();
+                    LoadContent(nowShowing);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Coba lagi :)");
+                }
             }
         }
     }
