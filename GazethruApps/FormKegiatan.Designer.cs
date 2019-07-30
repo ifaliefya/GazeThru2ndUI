@@ -180,12 +180,12 @@
             // 
             this.textBoxIsi.BackColor = System.Drawing.Color.White;
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIsi.Location = new System.Drawing.Point(417, 67);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
-            this.textBoxIsi.Size = new System.Drawing.Size(461, 332);
+            this.textBoxIsi.Size = new System.Drawing.Size(601, 510);
             this.textBoxIsi.TabIndex = 39;
             this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
             // 
@@ -193,10 +193,10 @@
             // 
             this.lblJudul.AutoSize = true;
             this.lblJudul.BackColor = System.Drawing.Color.White;
-            this.lblJudul.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJudul.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJudul.Location = new System.Drawing.Point(412, 19);
             this.lblJudul.Name = "lblJudul";
-            this.lblJudul.Size = new System.Drawing.Size(457, 30);
+            this.lblJudul.Size = new System.Drawing.Size(531, 32);
             this.lblJudul.TabIndex = 38;
             this.lblJudul.Text = "Kontes Robot Terbang Indonesia (KRTI) 2018";
             // 

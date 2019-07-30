@@ -128,12 +128,13 @@
             // 
             this.textBoxIsi.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxIsi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIsi.ForeColor = System.Drawing.Color.Black;
             this.textBoxIsi.Location = new System.Drawing.Point(539, 74);
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
-            this.textBoxIsi.Size = new System.Drawing.Size(399, 102);
+            this.textBoxIsi.Size = new System.Drawing.Size(540, 138);
             this.textBoxIsi.TabIndex = 40;
             this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
             // 
@@ -141,11 +142,11 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.BackColor = System.Drawing.SystemColors.Control;
-            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJudul.ForeColor = System.Drawing.Color.Black;
             this.labelJudul.Location = new System.Drawing.Point(534, 32);
             this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(192, 25);
+            this.labelJudul.Size = new System.Drawing.Size(211, 29);
             this.labelJudul.TabIndex = 41;
             this.labelJudul.Text = "Ruang Tata Usaha";
             // 
