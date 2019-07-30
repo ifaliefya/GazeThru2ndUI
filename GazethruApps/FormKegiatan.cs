@@ -279,7 +279,7 @@ namespace GazethruApps
                     PopulateButton();
                     LoadContent(nowShowing);
                 }
-                catch (Exception ex)
+                catch 
                 {
                     MessageBox.Show("Coba lagi :)");
                 }
@@ -304,7 +304,7 @@ namespace GazethruApps
                     PopulateButton();
                     LoadContent(nowShowing);
                 }
-                catch (Exception ex)
+                catch 
                 {
                     MessageBox.Show("Coba lagi :)");
                 }

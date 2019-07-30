@@ -50,7 +50,7 @@ namespace GazethruApps
         }
 
         List<PExist> AllPointer = new List<PExist>();
-        int counter = 0;
+        //int counter = 0;
         int maxCounter;
         
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
@@ -579,7 +579,6 @@ namespace GazethruApps
         }
 
         int SelectedRow;
-
         private void buttonPrev_Click(object sender, EventArgs e)
         {
             if (NotSave == true)

@@ -176,7 +176,7 @@ namespace GazethruApps
                     PreviewDetail(AllPointer[counter].Name);
                     PopulateButton();
                 }
-                catch (Exception ex)
+                catch 
                 {
                     MessageBox.Show("Coba lagi");
                 }
@@ -198,7 +198,7 @@ namespace GazethruApps
                     PreviewDetail(AllPointer[counter].Name);
                     PopulateButton();
                 }
-                catch (Exception ex)
+                catch 
                 {
                     MessageBox.Show("Coba lagi");
                 }
