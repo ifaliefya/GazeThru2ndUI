@@ -113,7 +113,7 @@
             // 
             // PresenceCheck
             // 
-            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.BackColor = System.Drawing.Color.LightCoral;
             this.PresenceCheck.Location = new System.Drawing.Point(955, 1070);
             this.PresenceCheck.Name = "PresenceCheck";
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
