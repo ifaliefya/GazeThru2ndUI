@@ -52,11 +52,11 @@ namespace GazethruApps
             wx.Add(0); //kembali
             wy.Add(0);
 
-            wx[0] = 1500; //next
+            wx[0] = 1370; //next
             wy[0] = 310;
-            wx[1] = 325; //prev
+            wx[1] = 371; //prev 
             wy[1] = 310;
-            wx[2] = 1600; //back
+            wx[2] = 1500; //back
             wy[2] = 925;
 
             kendali = new KendaliTombol();
@@ -108,11 +108,11 @@ namespace GazethruApps
                 wx[1]++;
                 wy[2]++;
             }
-            if(wx[0]==1800)
+            if(wx[0]==1670)
             {
                 lap = 1;
             }
-            if(wx[0]==1500)
+            if(wx[0]==1370)
             {
                 lap = 0;
             }
@@ -184,7 +184,7 @@ namespace GazethruApps
                 }
                 catch 
                 {
-                    MessageBox.Show("Coba lagi");
+                    return;
                 }
             }
 
@@ -208,7 +208,7 @@ namespace GazethruApps
                 }
                 catch 
                 {
-                    MessageBox.Show("Coba lagi");
+                    return;
                 }
             }
 
@@ -325,11 +325,13 @@ namespace GazethruApps
                     item.Size = new Size(52, 52);
                     Bitmap bmp = new Bitmap(Properties.Resources.kuning52px);
                     item.Image = bmp;
+                    item.Visible = true;
                 }
                 else
                 {
-                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
-                    item.Image = bmp;
+                    //Bitmap bmp = new Bitmap(Properties.Resources.biru);
+                    //item.Image = bmp;
+                    item.Visible = false;
                 }
         }
 

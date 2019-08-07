@@ -41,7 +41,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBarNext = new System.Windows.Forms.ProgressBar();
@@ -290,7 +290,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PresenceCheck;

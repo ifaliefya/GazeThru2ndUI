@@ -40,7 +40,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
-            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelView;
-        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PresenceCheck;
