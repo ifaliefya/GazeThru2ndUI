@@ -92,7 +92,7 @@ namespace GazethruApps
             btnPrev.Location = new Point((int)wx[1], (int)wy[1]);
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
-            progressBarBack.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarNext.Location = new Point((int)wx[0], (int)wy[0]);
             progressBarPrev.Location = new Point((int)wx[1], (int)wy[1]);
             progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
 

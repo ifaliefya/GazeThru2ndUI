@@ -177,7 +177,6 @@
             this.textBoxIsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIsi.Location = new System.Drawing.Point(417, 67);
             this.textBoxIsi.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
             this.textBoxIsi.Size = new System.Drawing.Size(608, 510);
@@ -209,7 +208,7 @@
             // 
             // PresenceCheck
             // 
-            this.PresenceCheck.BackColor = System.Drawing.Color.Maroon;
+            this.PresenceCheck.BackColor = System.Drawing.Color.LightCoral;
             this.PresenceCheck.Location = new System.Drawing.Point(955, 1070);
             this.PresenceCheck.Name = "PresenceCheck";
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
