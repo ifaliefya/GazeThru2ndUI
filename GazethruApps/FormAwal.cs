@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,6 @@ namespace GazethruApps
 
     public partial class formAwal : Form
     {
-
         List<double> wx;
         List<double> wy;
         int lap = 0;
@@ -45,7 +45,7 @@ namespace GazethruApps
 
             wx[0] = 1150; //lokasi awal 900; 830
             wy[0] = 900;
-
+            
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
 
             kendali.Start();
@@ -102,6 +102,7 @@ namespace GazethruApps
         private void timer1_Tick(object sender, EventArgs e)
         {
             btnUser.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBar1.Location = new Point((int)wx[0], (int)wy[0]);
 
             if (lap == 0) //titik awal
             {
@@ -122,11 +123,13 @@ namespace GazethruApps
             {
                 lap = 0;
             }
-
+            
             kendali.CekTombol();
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
+
+            //Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
@@ -142,8 +145,11 @@ namespace GazethruApps
             {
                 formUser FormUser = formUser.getInstance();
                 FormUser.Show();                                
-                this.Hide();                
-            }            
+                this.Hide();
+                timer1.Stop();
+            }
+            
+            progressBar1.Value = eawal.DataKor;
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -219,4 +225,3 @@ namespace GazethruApps
         }
     }           
 }
-

@@ -46,6 +46,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -213,12 +214,23 @@
             this.panel3.Size = new System.Drawing.Size(619, 625);
             this.panel3.TabIndex = 36;
             // 
+            // progressBar1
+            // 
+            
+            this.progressBar1.BackColor = System.Drawing.Color.White;
+            this.progressBar1.Location = new System.Drawing.Point(1220, 900);
+            this.progressBar1.Maximum = 80;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(174, 10);
+            this.progressBar1.TabIndex = 37;
+            // 
             // formAwal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnTutup);
@@ -260,6 +272,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel PresenceCheck;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
