@@ -44,6 +44,10 @@
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
+            this.progressBarPrev = new System.Windows.Forms.ProgressBar();
+            this.progressBarNext = new System.Windows.Forms.ProgressBar();
+            this.progressBarBack = new System.Windows.Forms.ProgressBar();
+            this.progressBarHome = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -211,12 +215,48 @@
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 37;
             // 
+            // progressBarPrev
+            // 
+            this.progressBarPrev.Location = new System.Drawing.Point(375, 342);
+            this.progressBarPrev.Maximum = 80;
+            this.progressBarPrev.Name = "progressBarPrev";
+            this.progressBarPrev.Size = new System.Drawing.Size(50, 3);
+            this.progressBarPrev.TabIndex = 38;
+            // 
+            // progressBarNext
+            // 
+            this.progressBarNext.Location = new System.Drawing.Point(1500, 342);
+            this.progressBarNext.Maximum = 80;
+            this.progressBarNext.Name = "progressBarNext";
+            this.progressBarNext.Size = new System.Drawing.Size(50, 3);
+            this.progressBarNext.TabIndex = 39;
+            // 
+            // progressBarBack
+            // 
+            this.progressBarBack.Location = new System.Drawing.Point(451, 670);
+            this.progressBarBack.Maximum = 80;
+            this.progressBarBack.Name = "progressBarBack";
+            this.progressBarBack.Size = new System.Drawing.Size(155, 3);
+            this.progressBarBack.TabIndex = 40;
+            // 
+            // progressBarHome
+            // 
+            this.progressBarHome.Location = new System.Drawing.Point(1330, 970);
+            this.progressBarHome.Maximum = 80;
+            this.progressBarHome.Name = "progressBarHome";
+            this.progressBarHome.Size = new System.Drawing.Size(155, 3);
+            this.progressBarHome.TabIndex = 41;
+            // 
             // formTentang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.progressBarHome);
+            this.Controls.Add(this.progressBarBack);
+            this.Controls.Add(this.progressBarNext);
+            this.Controls.Add(this.progressBarPrev);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.btnNext);
@@ -257,5 +297,9 @@
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PresenceCheck;
+        private System.Windows.Forms.ProgressBar progressBarPrev;
+        private System.Windows.Forms.ProgressBar progressBarNext;
+        private System.Windows.Forms.ProgressBar progressBarBack;
+        private System.Windows.Forms.ProgressBar progressBarHome;
     }
 }

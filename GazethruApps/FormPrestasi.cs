@@ -102,21 +102,29 @@ namespace GazethruApps
             {
                 btnPrev.Visible = false;
                 btnNext.Visible = false;
+                progressBarPrev.Visible = false;
+                progressBarNext.Visible = false;
             }
             else if (counter == 0)
             {
                 btnPrev.Visible = false;
                 btnNext.Visible = true;
+                progressBarPrev.Visible = false;
+                progressBarNext.Visible = true;
             }
             else if (counter == maxCounter - 1)
             {
                 btnNext.Visible = false;
                 btnPrev.Visible = true;
+                progressBarNext.Visible = false;
+                progressBarPrev.Visible = true;
             }
             else
             {
                 btnNext.Visible = true;
                 btnPrev.Visible = true;
+                progressBarNext.Visible = true;
+                progressBarPrev.Visible = true;
             }
         }
 
@@ -167,6 +175,11 @@ namespace GazethruApps
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
             btnHome.Location = new Point((int)wx[3], (int)wy[3]);
 
+            progressBarPrev.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarNext.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
+            progressBarHome.Location = new Point((int)wx[3], (int)wy[3]);
+
 
             if (lap == 0)
             {
@@ -213,6 +226,8 @@ namespace GazethruApps
                 kendali.Close();
                 this.Close();
             }
+
+            progressBarBack.Value = e.DataKor;
         }
         private void HomeTekan(ArgumenKendaliTombol e)
         {
@@ -229,6 +244,8 @@ namespace GazethruApps
                 kendali.Close();
                 this.Close();
             }
+
+            progressBarHome.Value = e.DataKor;
         }
         private void NextTekan(ArgumenKendaliTombol e)
         {
@@ -253,6 +270,8 @@ namespace GazethruApps
                     MessageBox.Show("Coba lagi :)");
                 }
             }
+
+            progressBarNext.Value = e.DataKor;
         }
         private void PrevTekan(ArgumenKendaliTombol e)
         {
@@ -272,6 +291,8 @@ namespace GazethruApps
                     MessageBox.Show("Coba lagi :)");
                 }
             }
+
+            progressBarPrev.Value = e.DataKor;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formKegiatan));
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +44,11 @@
             this.textBoxIsi = new System.Windows.Forms.TextBox();
             this.lblJudul = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressBarNext = new System.Windows.Forms.ProgressBar();
+            this.progressBarPrev = new System.Windows.Forms.ProgressBar();
+            this.progressBarBack = new System.Windows.Forms.ProgressBar();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.progressBarHome = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,20 +83,6 @@
             this.btnPrev.TabIndex = 37;
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(1330, 970);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(155, 56);
-            this.btnHome.TabIndex = 36;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnBack
             // 
@@ -210,16 +200,66 @@
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
+            // progressBarNext
+            // 
+            this.progressBarNext.Location = new System.Drawing.Point(1500, 342);
+            this.progressBarNext.Maximum = 80;
+            this.progressBarNext.Name = "progressBarNext";
+            this.progressBarNext.Size = new System.Drawing.Size(50, 3);
+            this.progressBarNext.TabIndex = 42;
+            // 
+            // progressBarPrev
+            // 
+            this.progressBarPrev.Location = new System.Drawing.Point(375, 342);
+            this.progressBarPrev.Maximum = 80;
+            this.progressBarPrev.Name = "progressBarPrev";
+            this.progressBarPrev.Size = new System.Drawing.Size(50, 3);
+            this.progressBarPrev.TabIndex = 43;
+            // 
+            // progressBarBack
+            // 
+            this.progressBarBack.Location = new System.Drawing.Point(451, 670);
+            this.progressBarBack.Maximum = 80;
+            this.progressBarBack.Name = "progressBarBack";
+            this.progressBarBack.Size = new System.Drawing.Size(155, 3);
+            this.progressBarBack.TabIndex = 44;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(197)))), ((int)(((byte)(1)))));
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Location = new System.Drawing.Point(1330, 970);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(155, 56);
+            this.btnHome.TabIndex = 47;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // progressBarHome
+            // 
+            this.progressBarHome.Location = new System.Drawing.Point(1330, 970);
+            this.progressBarHome.Maximum = 80;
+            this.progressBarHome.Name = "progressBarHome";
+            this.progressBarHome.Size = new System.Drawing.Size(155, 3);
+            this.progressBarHome.TabIndex = 45;
+            // 
             // formKegiatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.progressBarHome);
+            this.Controls.Add(this.progressBarBack);
+            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.progressBarPrev);
+            this.Controls.Add(this.progressBarNext);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrev);
-            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -242,7 +282,6 @@
         #endregion
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -255,5 +294,10 @@
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PresenceCheck;
+        private System.Windows.Forms.ProgressBar progressBarNext;
+        private System.Windows.Forms.ProgressBar progressBarPrev;
+        private System.Windows.Forms.ProgressBar progressBarBack;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.ProgressBar progressBarHome;
     }
 }

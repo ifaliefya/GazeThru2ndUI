@@ -71,6 +71,10 @@ namespace GazethruApps
             btnPeta.Location = new Point((int)wx[1], (int)wy[1]);
             btnBack.Location = new Point((int)wx[2], (int)wy[2]);
 
+            progressBarInform.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarPeta.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
+
             if (lap == 0)
             {
                 wx[0]--;
@@ -138,6 +142,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarInform.Value = e.DataKor;
         }
         private void PetaTekan(ArgumenKendaliTombol e)
         {
@@ -155,6 +161,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarPeta.Value = e.DataKor;
         }
         private void BackTekan(ArgumenKendaliTombol e)
         {
@@ -172,6 +180,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarBack.Value = e.DataKor;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

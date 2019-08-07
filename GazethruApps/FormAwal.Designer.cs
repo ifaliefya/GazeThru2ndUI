@@ -216,12 +216,11 @@
             // 
             // progressBar1
             // 
-            
             this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.Location = new System.Drawing.Point(1220, 900);
             this.progressBar1.Maximum = 80;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(174, 10);
+            this.progressBar1.Size = new System.Drawing.Size(174, 3);
             this.progressBar1.TabIndex = 37;
             // 
             // formAwal

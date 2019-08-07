@@ -71,6 +71,11 @@ namespace GazethruApps
             btnPrestasi.Location = new Point((int)wx[2], (int)wy[2]);
             btnHome.Location = new Point((int)wx[3], (int)wy[3]);
 
+            progressBarTentang.Location = new Point((int)wx[0], (int)wy[0]);
+            progressBarKegiatan.Location = new Point((int)wx[1], (int)wy[1]);
+            progressBarPrestasi.Location = new Point((int)wx[2], (int)wy[2]);
+            progressBarHome.Location = new Point((int)wx[3], (int)wy[3]);
+
             if (lap == 0)
             {
                 wy[0]--;
@@ -118,6 +123,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarHome.Value = e.DataKor;
         }
 
         private void KgtnTekan(ArgumenKendaliTombol e)
@@ -135,6 +142,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarKegiatan.Value = e.DataKor;
         }
 
         private void PrestasiTekan(ArgumenKendaliTombol e)
@@ -152,6 +161,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarPrestasi.Value = e.DataKor;
         }
 
         private void TentangTekan(ArgumenKendaliTombol e)
@@ -169,6 +180,8 @@ namespace GazethruApps
                 timer1.Stop();
                 this.Close();
             }
+
+            progressBarTentang.Value = e.DataKor;
         }
 
         private void FormInformasi_Load(object sender, EventArgs e)

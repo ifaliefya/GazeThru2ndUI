@@ -37,6 +37,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PresenceCheck = new System.Windows.Forms.Panel();
+            this.progressBarInform = new System.Windows.Forms.ProgressBar();
+            this.progressBarPeta = new System.Windows.Forms.ProgressBar();
+            this.progressBarBack = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +122,30 @@
             this.PresenceCheck.Size = new System.Drawing.Size(10, 10);
             this.PresenceCheck.TabIndex = 37;
             // 
+            // progressBarInform
+            // 
+            this.progressBarInform.Location = new System.Drawing.Point(375, 400);
+            this.progressBarInform.Maximum = 80;
+            this.progressBarInform.Name = "progressBarInform";
+            this.progressBarInform.Size = new System.Drawing.Size(155, 3);
+            this.progressBarInform.TabIndex = 38;
+            // 
+            // progressBarPeta
+            // 
+            this.progressBarPeta.Location = new System.Drawing.Point(1420, 400);
+            this.progressBarPeta.Maximum = 80;
+            this.progressBarPeta.Name = "progressBarPeta";
+            this.progressBarPeta.Size = new System.Drawing.Size(155, 3);
+            this.progressBarPeta.TabIndex = 39;
+            // 
+            // progressBarBack
+            // 
+            this.progressBarBack.Location = new System.Drawing.Point(884, 940);
+            this.progressBarBack.Maximum = 80;
+            this.progressBarBack.Name = "progressBarBack";
+            this.progressBarBack.Size = new System.Drawing.Size(155, 3);
+            this.progressBarBack.TabIndex = 40;
+            // 
             // formUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +153,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.progressBarBack);
+            this.Controls.Add(this.progressBarPeta);
+            this.Controls.Add(this.progressBarInform);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -153,5 +183,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel PresenceCheck;
+        private System.Windows.Forms.ProgressBar progressBarInform;
+        private System.Windows.Forms.ProgressBar progressBarPeta;
+        private System.Windows.Forms.ProgressBar progressBarBack;
     }
 }
