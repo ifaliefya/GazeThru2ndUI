@@ -52,11 +52,11 @@ namespace GazethruApps
             wx.Add(0); //kembali
             wy.Add(0);
 
-            wx[0] = 1500; //next
+            wx[0] = 1370; //next
             wy[0] = 310;
-            wx[1] = 325; //prev
+            wx[1] = 371; //prev 
             wy[1] = 310;
-            wx[2] = 1600; //back
+            wx[2] = 1500; //back
             wy[2] = 925;
 
             kendali = new KendaliTombol();
@@ -104,11 +104,11 @@ namespace GazethruApps
                 wx[1]++;
                 wy[2]++;
             }
-            if(wx[0]==1800)
+            if(wx[0]==1670)
             {
                 lap = 1;
             }
-            if(wx[0]==1500)
+            if(wx[0]==1370)
             {
                 lap = 0;
             }
