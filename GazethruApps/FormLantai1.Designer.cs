@@ -37,7 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxIsi = new System.Windows.Forms.TextBox();
+            this.textBoxIsi = new System.Windows.Forms.RichTextBox();
             this.labelJudul = new System.Windows.Forms.Label();
             this.pictureBoxRuang = new System.Windows.Forms.PictureBox();
             this.panelPeta = new System.Windows.Forms.Panel();
@@ -134,7 +134,7 @@
             this.textBoxIsi.Multiline = true;
             this.textBoxIsi.Name = "textBoxIsi";
             this.textBoxIsi.ReadOnly = true;
-            this.textBoxIsi.Size = new System.Drawing.Size(540, 138);
+            this.textBoxIsi.Size = new System.Drawing.Size(880, 157);
             this.textBoxIsi.TabIndex = 40;
             this.textBoxIsi.Text = resources.GetString("textBoxIsi.Text");
             // 
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBoxRuang;
-        private System.Windows.Forms.TextBox textBoxIsi;
+        private System.Windows.Forms.RichTextBox textBoxIsi;
         private System.Windows.Forms.Label labelJudul;
         private System.Windows.Forms.Panel panelPeta;
         private System.Windows.Forms.PictureBox pbPetaLantai;

@@ -178,7 +178,7 @@ namespace GazethruApps
                 }
                 catch 
                 {
-                    MessageBox.Show("Coba lagi");
+                    return;
                 }
             }
         }
@@ -200,7 +200,7 @@ namespace GazethruApps
                 }
                 catch 
                 {
-                    MessageBox.Show("Coba lagi");
+                    return;
                 }
             }
         }
@@ -307,11 +307,13 @@ namespace GazethruApps
                     item.Size = new Size(52, 52);
                     Bitmap bmp = new Bitmap(Properties.Resources.kuning52px);
                     item.Image = bmp;
+                    item.Visible = true;
                 }
                 else
                 {
-                    Bitmap bmp = new Bitmap(Properties.Resources.biru);
-                    item.Image = bmp;
+                    //Bitmap bmp = new Bitmap(Properties.Resources.biru);
+                    //item.Image = bmp;
+                    item.Visible = false;
                 }
         }
 
