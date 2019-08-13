@@ -100,12 +100,6 @@
     <Compile Include="AdminPetaAwal.Designer.cs">
       <DependentUpon>AdminPetaAwal.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPetaEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminPetaEdit.Designer.cs">
-      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminPetaNewLantai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,12 +111,6 @@
     </Compile>
     <Compile Include="AdminPetaNew.Designer.cs">
       <DependentUpon>AdminPetaNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPetaNewLantaiDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPetaNewLantaiDetail.Designer.cs">
-      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminPetaNewRuang.cs">
       <SubType>UserControl</SubType>
@@ -234,17 +222,11 @@
     <EmbeddedResource Include="AdminPetaAwal.resx">
       <DependentUpon>AdminPetaAwal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaEdit.resx">
-      <DependentUpon>AdminPetaEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaNewLantai.resx">
       <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaNew.resx">
       <DependentUpon>AdminPetaNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaNewLantaiDetail.resx">
-      <DependentUpon>AdminPetaNewLantaiDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPetaNewRuang.resx">
       <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
