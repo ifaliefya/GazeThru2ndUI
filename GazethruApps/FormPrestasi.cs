@@ -81,7 +81,7 @@ namespace GazethruApps
         public void PopulateViewID()
         {
             con.Open();
-            string SelectQuery = "SELECT No FROM Info WHERE Show = 1;";
+            string SelectQuery = "SELECT No FROM Prestasi WHERE Show = 1;";
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.HasRows)
