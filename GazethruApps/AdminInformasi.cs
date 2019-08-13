@@ -30,14 +30,10 @@ namespace GazethruApps
         }
 
         public static int infoIDchoose;
-        public string Category = AdminAwal.Category;
-        //public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aliefya\source\repos\GazeThru00\GazethruApps\GazeThruDB.mdf;Integrated Security=True;Connect Timeout=30";
-        //SqlConnection con = new SqlConnection(connectionString);
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         private void AdminInformasi_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Clear();
             InfoContent("");
         }
 
@@ -62,7 +58,7 @@ namespace GazethruApps
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-                
+
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
@@ -119,39 +115,40 @@ namespace GazethruApps
 
         protected void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //disable edit on datagridview
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
-
-            int selected = 0;
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
+                //disable edit on datagridview
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
 
-                AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Info");
-                editInfo.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
+                    AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Info");
+                    editInfo.Show();
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Info WHERE No=" + infoIDchoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                    }
+
+                }
+                else
+                {
+                    textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
+                    textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
                 }
 
             }
-            else
+            catch
             {
-                textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
-                textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
+                return;
             }
-
 
             // Ignore clicks that are not on button cells. 
             //if (e.RowIndex < 0 || e.ColumnIndex !=
@@ -205,13 +202,9 @@ namespace GazethruApps
         // or enables the button in the same row as the clicked cell.
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int selected = 0;
-            
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
                 SqlCommand command = new SqlCommand("UPDATE Info SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 
@@ -220,17 +213,12 @@ namespace GazethruApps
                     command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
                     ExecMyQuery(command, "Data Show");
                 }
-                else if (check==false)
+                else if (check == false)
                 {
                     command.Parameters.Add("@show", SqlDbType.Bit).Value = check;
                     ExecMyQuery(command, "Data Hide");
                 }
             }
-        }
-
-        private void textBoxIsi_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

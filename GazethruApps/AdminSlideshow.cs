@@ -116,7 +116,7 @@ namespace GazethruApps
         }
 
         //Add checkbox hide show
-        private void CreateShowCheckbox ()
+        private void CreateShowCheckbox()
         {
             DataGridViewCheckBoxColumn showCheck = new DataGridViewCheckBoxColumn();
             showCheck.HeaderText = "Show";
@@ -135,41 +135,48 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //disable edit on datagridview
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            int selected = 0;
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
-                editInfo.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
+                //disable edit on datagridview
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                int selected = 0;
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
+                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                    infoIDchoose = selected;
+                    AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
+                    editInfo.Show();
                 }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
 
+                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                    infoIDchoose = selected;
+                    SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                    }
+
+                }
+                else
+                {
+                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
+                    PreviewID = selected;
+                    PreviewImage();
+                }
             }
-            else
+            catch
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                PreviewID = selected;
-                PreviewImage();
+                return;
             }
         }
 
- 
+
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
             con.Open();
