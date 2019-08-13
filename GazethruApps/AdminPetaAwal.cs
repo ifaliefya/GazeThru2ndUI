@@ -43,7 +43,6 @@ namespace GazethruApps
             //if not null
             PetaList();
             GetFirstID(con);
-            GetLastID(con);
 
             PreviewImage(FirstID);
         }
@@ -124,29 +123,63 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
-            if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
+            try
             {
-                AdminPetaNew addNewLantai = new AdminPetaNew();
-                addNewLantai.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                PetaIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+                if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
-                    GetLastID(con);
+                    AdminPetaNew addNewLantai = new AdminPetaNew();
+                    addNewLantai.Show();
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Peta WHERE No=" + PetaIDchoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                    }
+                }
+                else
+                {
+                    //preview jumlah pointer
+                    SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Ruang WHERE PetaID = " + PetaIDchoose, con);
+                    con.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            tbCountPoint.Text = reader.GetInt32(0).ToString();
+                        }
+                    }
+                    else
+                    {
+                        tbCountPoint.Text = "0";
+                    }
+                    reader.Close();
+                    con.Close();
+                    //preview gambar lantai
+                    PreviewImage(PetaIDchoose);
+                    //preview pointer
+                    List<Control> listPointer = pictureBox1.Controls.Cast<Control>().ToList();
+                    foreach (Control control in listPointer)
+                    {
+                        pictureBox1.Controls.Remove(control);
+                        control.Dispose();
+                    }
+                    LoadPointer(PetaIDchoose);
                 }
             }
-            else
+            catch
             {
-                PreviewImage(PetaIDchoose);
+                return;
             }
+
         }
 
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
@@ -163,7 +196,6 @@ namespace GazethruApps
 
             con.Close();
             PetaList();
-            GetLastID(con);
         }
 
         public void GetFirstID(SqlConnection connection)
@@ -188,44 +220,12 @@ namespace GazethruApps
             connection.Close();
         }
 
-        public void GetLastID(SqlConnection connection)
-        {
-            SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Peta", connection);
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    LastID = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-            }
-            reader.Close();
-            connection.Close();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             PetaIDchoose = 0;
             AdminPetaNew addNewLantai = new AdminPetaNew();
             addNewLantai.Show();
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Choose Image(*.JPG; *.PNG; *.GIF)|*.jpg;*.png;*.gif";
-            if (opf.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image = Image.FromFile(opf.FileName);
-            }
         }
 
         private byte[] GetPic(Image img)
@@ -241,5 +241,42 @@ namespace GazethruApps
             }
         }
 
+        public void LoadPointer(int IDLantai)
+        {
+            con.Open();
+            string SelectQuery = "SELECT LocX, LocY, Pointer FROM Ruang WHERE PetaID = " + IDLantai;
+            SqlCommand command = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = command.ExecuteReader();
+            if (read.HasRows)
+            {
+                while (read.Read())
+                {
+                    var locx = read.GetInt32(0);
+                    var locy = read.GetInt32(1);
+                    var name = read.GetString(2);
+
+                    Pointer P = ReadPointer(locx, locy, name);
+                    pictureBox1.Controls.Add(P);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tambahkan Pointer");
+            }
+
+            con.Close();
+
+        }
+
+        Pointer ReadPointer(int x, int y, string name)
+        {
+            Pointer Pointer = new Pointer();
+            Pointer.Name = name;
+            Pointer.Size = new Size(22, 30);
+            Pointer.Location = new System.Drawing.Point(x, y);
+            Pointer.BackColor = Color.Transparent;
+            Pointer.Image = new Bitmap(Properties.Resources.biru);
+            return Pointer;
+        }
     }
 }

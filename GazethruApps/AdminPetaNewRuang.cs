@@ -50,9 +50,9 @@ namespace GazethruApps
         }
 
         List<PExist> AllPointer = new List<PExist>();
-        //int counter = 0;
+        int counter = 0;
         int maxCounter;
-        
+
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         public AdminPetaNewRuang()
@@ -67,7 +67,7 @@ namespace GazethruApps
 
         }
 
-        public void LoadPointer (int IDLantai)
+        public void LoadPointer(int IDLantai)
         {
             con.Open();
             string SelectQuery = "SELECT LocX, LocY, Pointer FROM Ruang WHERE PetaID = " + IDLantai;
@@ -98,7 +98,7 @@ namespace GazethruApps
             {
                 MessageBox.Show("Tambahkan Pointer");
             }
-            
+
             con.Close();
 
         }
@@ -117,7 +117,7 @@ namespace GazethruApps
             return Pointer;
         }
 
-        public void GetLantaiPic (int IDLantai)
+        public void GetLantaiPic(int IDLantai)
         {
             NoLantai = IDLantai;
 
@@ -143,18 +143,18 @@ namespace GazethruApps
             con.Close();
         }
 
-        public void ListPoint (int IDLantai)
+        public void ListPoint(int IDLantai)
         {
             string SelectQuery = "SELECT Id, Judul, Pointer FROM Ruang WHERE PetaID =" + IDLantai;
             SqlCommand command = new SqlCommand(SelectQuery, con);
-            SqlDataAdapter adapter = new SqlDataAdapter(command); 
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-            DataTable table = new DataTable(); 
+            DataTable table = new DataTable();
 
             adapter.Fill(table);
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = table; 
+            dataGridView1.DataSource = table;
 
             CreateButtonColumn();
             CreateDeleteButton();
@@ -213,7 +213,7 @@ namespace GazethruApps
             NotSave = true;
         }
 
-        void BelomDisimpan ()
+        void BelomDisimpan()
         {
             List<Control> listPointer = pbPetaLantai.Controls.Cast<Control>().ToList();
             foreach (Control control in listPointer)
@@ -224,7 +224,7 @@ namespace GazethruApps
             LoadPointer(NoLantai);
         }
 
-        Pointer AddPointer (int newPointerID)
+        Pointer AddPointer(int newPointerID)
         {
             EditSession = 0;
             Pointer Pointer = new Pointer();
@@ -244,7 +244,7 @@ namespace GazethruApps
         }
 
         Point loc;
-        void PointerDown (object sender, MouseEventArgs e)
+        void PointerDown(object sender, MouseEventArgs e)
         {
             Pointer currentP = (Pointer)sender;
             if (e.Button == MouseButtons.Left)
@@ -305,7 +305,7 @@ namespace GazethruApps
         }
 
 
-        public void AddEditView (Boolean Content, Boolean Write, Boolean ButtonEdit )
+        public void AddEditView(Boolean Content, Boolean Write, Boolean ButtonEdit)
         {
             Boolean Edit;
             Boolean Read;
@@ -349,8 +349,8 @@ namespace GazethruApps
 
             tbLocX.BackColor = ColorTB;
             tbLocY.BackColor = ColorTB; ;
-            textBoxJudul.BackColor = ColorTB; 
-            textBoxIsi.BackColor = ColorTB; 
+            textBoxJudul.BackColor = ColorTB;
+            textBoxIsi.BackColor = ColorTB;
 
         }
 
@@ -379,7 +379,7 @@ namespace GazethruApps
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            
+
             while (reader.Read())
             {
                 if (!reader.IsDBNull(0))
@@ -432,7 +432,7 @@ namespace GazethruApps
                 command.Parameters.Add("@locx", SqlDbType.Int).Value = currentPLocX;
                 command.Parameters.Add("@locy", SqlDbType.Int).Value = currentPLocY;
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxJudul.Text;
+                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
                 command.Parameters.Add("@pointer", SqlDbType.VarChar).Value = NewPName;
 
                 if (pictureBoxRuang.Image == null)
@@ -455,7 +455,7 @@ namespace GazethruApps
                 command.Parameters.Add("@locx", SqlDbType.Int).Value = currentPLocX;
                 command.Parameters.Add("@locy", SqlDbType.Int).Value = currentPLocY;
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = textBoxJudul.Text;
-                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxJudul.Text;
+                command.Parameters.Add("@isi", SqlDbType.VarChar).Value = textBoxIsi.Text;
 
 
                 if (pictureBoxRuang.Image == null)
@@ -493,46 +493,53 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (NotSave == true)
+            try
             {
-                BelomDisimpan();
-            }
-            this.dataGridView1.Rows[e.RowIndex].Cells["Id"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            int selected = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
-            IDChoose = selected;
-            string Pselected = (string)dataGridView1.Rows[e.RowIndex].Cells["Pointer"].Value;
-
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
-            {
-                AddEditView(true, true, false);
-                PreviewDetail(Pselected);
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                SqlCommand command = new SqlCommand("DELETE FROM Ruang WHERE Id=" + IDChoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (NotSave == true)
                 {
-                    ExecMyQuery(command, "Data Deleted");
-                    foreach (Control item in pbPetaLantai.Controls)
-                        if (item.Name == Pselected)
-                        {
-                            pbPetaLantai.Controls.Remove(item);
-                            break;
-                        }
+                    BelomDisimpan();
+                }
+                this.dataGridView1.Rows[e.RowIndex].Cells["Id"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+
+                int selected = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
+                IDChoose = selected;
+                string Pselected = (string)dataGridView1.Rows[e.RowIndex].Cells["Pointer"].Value;
+
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+                {
+                    AddEditView(true, true, false);
+                    PreviewDetail(Pselected);
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Ruang WHERE Id=" + IDChoose, con);
+
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                        foreach (Control item in pbPetaLantai.Controls)
+                            if (item.Name == Pselected)
+                            {
+                                pbPetaLantai.Controls.Remove(item);
+                                break;
+                            }
+                    }
+                }
+                else
+                {
+                    AddEditView(true, false, true);
+                    PreviewDetail(Pselected);
+                    //labelIDNow.Text = Pselected;
                 }
             }
-            else
+            catch
             {
-                AddEditView(true, false, true);
-                PreviewDetail(Pselected);
-                //labelIDNow.Text = Pselected;
+                return;
             }
         }
 
-        void PreviewDetail (string Pname)
+        void PreviewDetail(string Pname)
         {
             PointerChoosen(Pname);
 
@@ -545,7 +552,7 @@ namespace GazethruApps
                 EditSession = (int)(read["Id"]);
                 //tbLocX.Text = (String)(read["LocX"].ToString());
                 //tbLocY.Text = (String)(read["LocY"].ToString());
-                textBoxJudul.Text = (String)(read["Judul"]); 
+                textBoxJudul.Text = (String)(read["Judul"]);
                 textBoxIsi.Text = (String)(read["Isi"]);
 
                 if (!Convert.IsDBNull(read["Gambar"]))
@@ -575,7 +582,7 @@ namespace GazethruApps
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //adminPetaNew Close
+            AdminPetaNew.Instance.Close();
         }
 
         int SelectedRow;
@@ -601,7 +608,7 @@ namespace GazethruApps
             }
 
         }
-        
+
         private void buttonNext_Click(object sender, EventArgs e)
         {
             if (NotSave == true)
@@ -610,7 +617,7 @@ namespace GazethruApps
             }
             buttonPrev.Enabled = true;
             SelectedRow = dataGridView1.SelectedCells[0].OwningRow.Index;
-            if (SelectedRow < dataGridView1.Rows.Count -1)
+            if (SelectedRow < dataGridView1.Rows.Count - 1)
             {
                 dataGridView1.ClearSelection();
                 dataGridView1.Rows[SelectedRow + 1].Selected = true;
