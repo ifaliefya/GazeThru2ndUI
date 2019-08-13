@@ -293,16 +293,20 @@ namespace GazethruApps
                     Pointer P = ReadPointer(locx, locy, name);
                     pbPetaLantai.Controls.Add(P);
                 }
+                con.Close();
                 maxCounter = AllPointer.Count;
+                PreviewDetail(AllPointer[0].Name);
             }
             else
             {
-                MessageBox.Show("Tambahkan Pointer");
+                maxCounter = 1;
+
+                labelJudul.Text = "Pointer belum diatur";
+                textBoxIsi.Text = "";
+                Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+                pictureBoxRuang.Image = bmp;
             }
 
-            con.Close();
-
-            PreviewDetail(AllPointer[0].Name);
             PopulateButton();
         }
 
@@ -356,14 +360,14 @@ namespace GazethruApps
                 }
                 else
                 {
-                    pictureBoxRuang.Image = null;
+                    Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+                    pictureBoxRuang.Image = bmp;
                 }
             }
             else
             {
                 labelJudul.Text = "";
                 textBoxIsi.Text = "";
-                pictureBoxRuang.Image = null;
             }
             con.Close();
         }
