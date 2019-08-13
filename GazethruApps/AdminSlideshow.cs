@@ -142,19 +142,14 @@ namespace GazethruApps
                 this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
                 this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-                int selected = 0;
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
                 if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
-                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                    infoIDchoose = selected;
                     AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
                     editInfo.Show();
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
-
-                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                    infoIDchoose = selected;
                     SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
 
                     if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -165,8 +160,7 @@ namespace GazethruApps
                 }
                 else
                 {
-                    Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                    PreviewID = selected;
+                    PreviewID = infoIDchoose;
                     PreviewImage();
                 }
             }
@@ -204,12 +198,10 @@ namespace GazethruApps
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int selected = 0;
 
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
 
                 SqlCommand command = new SqlCommand("UPDATE Slider SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
