@@ -33,6 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Home = new System.Windows.Forms.Button();
             this.Sidepanel = new System.Windows.Forms.Panel();
+            this.btn_Password = new System.Windows.Forms.Button();
             this.btn_Peta = new System.Windows.Forms.Button();
             this.btn_Kegiatan = new System.Windows.Forms.Button();
             this.btn_Prestasi = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btnTutup = new System.Windows.Forms.Button();
             this.btnMini = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Password = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -101,6 +101,23 @@
             this.Sidepanel.Name = "Sidepanel";
             this.Sidepanel.Size = new System.Drawing.Size(10, 63);
             this.Sidepanel.TabIndex = 1;
+            // 
+            // btn_Password
+            // 
+            this.btn_Password.FlatAppearance.BorderSize = 0;
+            this.btn_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Password.Image = ((System.Drawing.Image)(resources.GetObject("btn_Password.Image")));
+            this.btn_Password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Password.Location = new System.Drawing.Point(11, 592);
+            this.btn_Password.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Password.Name = "btn_Password";
+            this.btn_Password.Size = new System.Drawing.Size(282, 63);
+            this.btn_Password.TabIndex = 0;
+            this.btn_Password.Text = "   Ubah Password";
+            this.btn_Password.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Password.UseVisualStyleBackColor = true;
+            this.btn_Password.Click += new System.EventHandler(this.btn_Password_Click);
             // 
             // btn_Peta
             // 
@@ -231,23 +248,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1920, 47);
             this.panel2.TabIndex = 36;
-            // 
-            // btn_Password
-            // 
-            this.btn_Password.FlatAppearance.BorderSize = 0;
-            this.btn_Password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Password.Image = ((System.Drawing.Image)(resources.GetObject("btn_Password.Image")));
-            this.btn_Password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Password.Location = new System.Drawing.Point(11, 592);
-            this.btn_Password.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Password.Name = "btn_Password";
-            this.btn_Password.Size = new System.Drawing.Size(282, 63);
-            this.btn_Password.TabIndex = 0;
-            this.btn_Password.Text = "   Ubah Password";
-            this.btn_Password.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Password.UseVisualStyleBackColor = true;
-            this.btn_Password.Click += new System.EventHandler(this.btn_Password_Click);
             // 
             // AdminAwal
             // 
