@@ -190,9 +190,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(133, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 45);
+            this.label2.Size = new System.Drawing.Size(152, 45);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Tentang DTETI";
+            this.label2.Text = "Kegiatan";
             // 
             // AdminKegiatan
             // 

@@ -58,7 +58,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelNamaLantai = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPointer)).BeginInit();
             this.panelDetails.SuspendLayout();
@@ -383,7 +382,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.panel3.Controls.Add(this.labelNamaLantai);
-            this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -401,18 +399,6 @@
             this.labelNamaLantai.Size = new System.Drawing.Size(234, 45);
             this.labelNamaLantai.TabIndex = 17;
             this.labelNamaLantai.Text = "Nama Lantai  :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1043, 41);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(271, 45);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Lantai Berapa Ini";
             // 
             // AdminPetaNewRuang
             // 
@@ -481,6 +467,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelNamaLantai;
-        private System.Windows.Forms.Label label6;
     }
 }

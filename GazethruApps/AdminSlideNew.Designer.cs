@@ -67,7 +67,7 @@
             // 
             // textBoxJudul
             // 
-            this.textBoxJudul.ForeColor = System.Drawing.Color.White;
+            this.textBoxJudul.ForeColor = System.Drawing.Color.Black;
             this.textBoxJudul.Location = new System.Drawing.Point(120, 60);
             this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJudul.Name = "textBoxJudul";
