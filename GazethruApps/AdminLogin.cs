@@ -36,8 +36,8 @@ namespace GazethruApps
             if (dt.Rows[0][0].ToString() == "1")
             {
                 this.Close();
-                //AdminAwal Informasi = new AdminAwal();
-                //Informasi.Show();
+                AdminAwal Informasi = new AdminAwal();
+                Informasi.Show();
             }
             else
             {

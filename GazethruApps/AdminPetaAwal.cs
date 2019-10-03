@@ -261,7 +261,7 @@ namespace GazethruApps
             }
             else
             {
-                MessageBox.Show("Tambahkan Pointer");
+                MessageBox.Show("Pointer belum diatur");
             }
 
             con.Close();
