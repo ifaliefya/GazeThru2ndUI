@@ -261,7 +261,7 @@
             this.pictureBoxRuang.Location = new System.Drawing.Point(15, 0);
             this.pictureBoxRuang.Name = "pictureBoxRuang";
             this.pictureBoxRuang.Size = new System.Drawing.Size(384, 216);
-            this.pictureBoxRuang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxRuang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRuang.TabIndex = 41;
             this.pictureBoxRuang.TabStop = false;
             // 
