@@ -80,20 +80,13 @@ namespace GazethruApps
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Peta", connection);
+              "SELECT ISNULL (MAX(No), 0) FROM Peta", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    LastID = reader.GetInt32(0) + 1;
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                LastID = reader.GetInt32(0) + 1;
             }
             reader.Close();
             connection.Close();

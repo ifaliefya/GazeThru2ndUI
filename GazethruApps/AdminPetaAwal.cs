@@ -201,20 +201,13 @@ namespace GazethruApps
         public void GetFirstID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MIN(No) FROM Peta", connection);
+              "SELECT ISNULL (MIN(No), 0) FROM Peta", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    FirstID = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                FirstID = reader.GetInt32(0);
             }
             reader.Close();
             connection.Close();
