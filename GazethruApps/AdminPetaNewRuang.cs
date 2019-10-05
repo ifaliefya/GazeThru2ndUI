@@ -213,10 +213,12 @@ namespace GazethruApps
             P.Move += new System.EventHandler(this.PointerMove);
             P.Click += new System.EventHandler(this.PointerClick);
 
-            tbLocX.Text = P.Location.X.ToString();
-            tbLocY.Text = P.Location.Y.ToString();
+            
 
             AddEditView(false, true, false);
+
+            tbLocX.Text = P.Location.X.ToString();
+            tbLocY.Text = P.Location.Y.ToString();
             NotSave = true;
         }
 
@@ -373,6 +375,12 @@ namespace GazethruApps
                         break;
                     }
                 LastPointer--;
+            }
+            List<Control> listPointer = pbPetaLantai.Controls.Cast<Control>().ToList();
+            foreach (Control control in listPointer)
+            {
+                pbPetaLantai.Controls.Remove(control);
+                control.Dispose();
             }
             LoadPointer(NoLantai);
         }

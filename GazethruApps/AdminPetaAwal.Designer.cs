@@ -105,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 141);
+            this.label1.Location = new System.Drawing.Point(742, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 21);
@@ -116,7 +116,7 @@
             // 
             this.tbCountPoint.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbCountPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCountPoint.Location = new System.Drawing.Point(386, 137);
+            this.tbCountPoint.Location = new System.Drawing.Point(868, 141);
             this.tbCountPoint.Name = "tbCountPoint";
             this.tbCountPoint.ReadOnly = true;
             this.tbCountPoint.Size = new System.Drawing.Size(78, 29);
