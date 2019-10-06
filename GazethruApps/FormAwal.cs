@@ -29,9 +29,10 @@ namespace GazethruApps
         Object[] numb;
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+
         KendaliTombol kendali;
         public formAwal()
-        {
+        {   
             InitializeComponent();
 
             PopulateViewID();
@@ -129,7 +130,7 @@ namespace GazethruApps
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
 
-            Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
+            Console.WriteLine(eawal.mataX + "     "+eawal.mataY+"    "+ eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
