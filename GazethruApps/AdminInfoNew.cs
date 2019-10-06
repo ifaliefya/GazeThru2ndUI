@@ -46,27 +46,21 @@ namespace GazethruApps
             Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
             pictureBox1.Image = bmp;
             GetLastID(con);
-            NoInfo.Text = infoIDlast.ToString();
+            int InfoView = infoIDlast + 1;
+            NoInfo.Text = InfoView.ToString();
         }
 
 
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM " + Category, connection);
+              "SELECT ISNULL (MAX(No), 0) FROM " + Category, connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    infoIDlast = reader.GetInt32(0) + 1;
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                infoIDlast = reader.GetInt32(0);
             }
             reader.Close();
             connection.Close();
@@ -87,7 +81,7 @@ namespace GazethruApps
         
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            int last = infoIDlast - 1; 
+            int last = infoIDlast; 
             string InsertQuery =
                 "DBCC CHECKIDENT (" + Category + ", RESEED," + last + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
                 "INSERT INTO "+ Category +"(Judul, Isi, Show, Gambar) VALUES (@judul , @isi, @show, @gambar);";

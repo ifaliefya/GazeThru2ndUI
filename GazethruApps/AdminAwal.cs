@@ -25,7 +25,7 @@ namespace GazethruApps
                 AdminSlideshow.Instance.Dock = DockStyle.Fill;
                 AdminSlideshow.Instance.BringToFront();
                 AdminSlideshow Slideshow = new AdminSlideshow();
-                Slideshow.SlideList("");
+                //Slideshow.SlideList("");
             }
             else
                 AdminSlideshow.Instance.BringToFront();

@@ -33,6 +33,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbCountPoint = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -43,11 +45,10 @@
             this.pictureBox1.Location = new System.Drawing.Point(136, 179);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(720, 480);
+            this.pictureBox1.Size = new System.Drawing.Size(810, 540);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelJudulPeta
             // 
@@ -65,12 +66,12 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(936, 179);
+            this.dataGridView1.Location = new System.Drawing.Point(968, 179);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(353, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(353, 540);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -81,7 +82,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(1169, 128);
+            this.btnAdd.Location = new System.Drawing.Point(1201, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 34);
@@ -100,11 +101,35 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Denah DTETI";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(742, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 21);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Jumlah Pointer :";
+            // 
+            // tbCountPoint
+            // 
+            this.tbCountPoint.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbCountPoint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCountPoint.Location = new System.Drawing.Point(868, 141);
+            this.tbCountPoint.Name = "tbCountPoint";
+            this.tbCountPoint.ReadOnly = true;
+            this.tbCountPoint.Size = new System.Drawing.Size(78, 29);
+            this.tbCountPoint.TabIndex = 27;
+            this.tbCountPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // AdminPetaAwal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.tbCountPoint);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
@@ -128,5 +153,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbCountPoint;
     }
 }

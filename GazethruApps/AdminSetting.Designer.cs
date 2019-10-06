@@ -37,7 +37,7 @@
             this.btnPassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPassCurrent
@@ -112,6 +112,7 @@
             this.btnPassword.TabIndex = 15;
             this.btnPassword.Text = "SIMPAN";
             this.btnPassword.UseVisualStyleBackColor = false;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
             // label3
             // 
@@ -134,14 +135,14 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Username                           :";
             // 
-            // textBox1
+            // txtUname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(394, 158);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 24);
-            this.textBox1.TabIndex = 26;
+            this.txtUname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUname.Location = new System.Drawing.Point(394, 158);
+            this.txtUname.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUname.Name = "txtUname";
+            this.txtUname.Size = new System.Drawing.Size(250, 24);
+            this.txtUname.TabIndex = 26;
             // 
             // AdminSetting
             // 
@@ -149,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.lblPassConfirm);
@@ -176,6 +177,6 @@
         private System.Windows.Forms.Button btnPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUname;
     }
 }

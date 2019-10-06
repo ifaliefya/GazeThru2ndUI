@@ -23,7 +23,7 @@ namespace GazethruApps
                 return _instance;
             }
         }
-       
+
         public AdminPrestasi()
         {
             InitializeComponent();
@@ -104,37 +104,38 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //disable edit on datagridview
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
-
-            int selected = 0;
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
+                //disable edit on datagridview
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Isi"].ReadOnly = true;
 
-                AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Prestasi");
-                editInfo.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Prestasi WHERE No=" + infoIDchoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
+                    AdminInfoEdit editInfo = new AdminInfoEdit(infoIDchoose, "Prestasi");
+                    editInfo.Show();
                 }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Prestasi WHERE No=" + infoIDchoose, con);
 
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                    }
+
+                }
+                else
+                {
+                    textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
+                    textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
+                }
             }
-            else
+            catch
             {
-                textBoxJudul.Text = dataGridView1.Rows[e.RowIndex].Cells["Judul"].Value.ToString();
-                textBoxIsi.Text = dataGridView1.Rows[e.RowIndex].Cells["Isi"].Value.ToString();
+                return;
             }
         }
 
@@ -169,13 +170,9 @@ namespace GazethruApps
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int selected = 0;
-
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
                 SqlCommand command = new SqlCommand("UPDATE Prestasi SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
 

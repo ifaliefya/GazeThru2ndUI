@@ -72,14 +72,21 @@ namespace GazethruApps
             string SelectQuery = "SELECT No FROM Slider WHERE Show = 1;";
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            if(read.HasRows)
             {
-                numb = new object[read.FieldCount];
-                ShowID.Add((int)read.GetValue(0));
+                while (read.Read())
+                {
+                    numb = new object[read.FieldCount];
+                    ShowID.Add((int)read.GetValue(0));
+                }
+                con.Close();
+                nowShowing = ShowID[0];
+                maxCounter = ShowID.Count;
             }
-            con.Close();
-            nowShowing = ShowID[0];
-            maxCounter = ShowID.Count;
+            else
+            {
+                maxCounter = 0;
+            }
 
         }
 
@@ -169,10 +176,10 @@ namespace GazethruApps
 
         private void buttonAdmin2_Click(object sender, EventArgs e)
         {
-            //AdminLogin LoginAdmin = new AdminLogin();
-            //LoginAdmin.Show();
-            AdminAwal test = new AdminAwal();
-            test.Show();
+            AdminLogin LoginAdmin = new AdminLogin();
+            LoginAdmin.Show();
+            //AdminAwal test = new AdminAwal();
+            //test.Show();
             this.Hide();
         }
 
@@ -188,7 +195,15 @@ namespace GazethruApps
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            LoadNextImage(nowShowing);
+            if (maxCounter>0)
+            {
+                LoadNextImage(nowShowing);
+            }
+            else
+            {
+                Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+                pictureBox1.Image = bmp;
+            }
         }
 
         public void LoadNextImage (int ViewShow)

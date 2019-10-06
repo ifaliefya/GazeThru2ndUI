@@ -40,8 +40,6 @@ namespace GazethruApps
         private void AdminSlideshow_Load(object sender, EventArgs e)
         {
             SlideList("");
-            GetFirstID(con);
-            GetLastID(con);
 
             PreviewID = FirstID;
             PreviewImage();
@@ -67,6 +65,9 @@ namespace GazethruApps
             CreateDeleteButton();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            GetFirstID(con);
+            GetLastID(con);
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace GazethruApps
         }
 
         //Add checkbox hide show
-        private void CreateShowCheckbox ()
+        private void CreateShowCheckbox()
         {
             DataGridViewCheckBoxColumn showCheck = new DataGridViewCheckBoxColumn();
             showCheck.HeaderText = "Show";
@@ -135,41 +136,42 @@ namespace GazethruApps
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //disable edit on datagridview
-            this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
-            this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
-
-            int selected = 0;
-            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            try
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
-                editInfo.Show();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
+                //disable edit on datagridview
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Tanggal"].ReadOnly = true;
+                this.dataGridView1.Rows[e.RowIndex].Cells["Judul"].ReadOnly = true;
 
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
-                SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
-
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
+                if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
                 {
-                    ExecMyQuery(command, "Data Deleted");
+                    AdminSlideEdit editInfo = new AdminSlideEdit(this, infoIDchoose);
+                    editInfo.Show();
                 }
+                else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM Slider WHERE No=" + infoIDchoose, con);
 
+                    if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ExecMyQuery(command, "Data Deleted");
+                    }
+
+                }
+                else
+                {
+                    PreviewID = infoIDchoose;
+                    PreviewImage();
+                }
             }
-            else
+            catch
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                PreviewID = selected;
-                PreviewImage();
+                return;
             }
         }
 
- 
+
         public void ExecMyQuery(SqlCommand mcomd, string myMsg)
         {
             con.Open();
@@ -197,12 +199,10 @@ namespace GazethruApps
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int selected = 0;
 
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Show")
             {
-                Int32.TryParse(dataGridView1.Rows[e.RowIndex].Cells["No"].Value.ToString(), out selected);
-                infoIDchoose = selected;
+                infoIDchoose = (int)dataGridView1.Rows[e.RowIndex].Cells["No"].Value;
 
                 SqlCommand command = new SqlCommand("UPDATE Slider SET Show=@show WHERE No=" + infoIDchoose, con);
                 Boolean check = (Boolean)(dataGridView1.Rows[e.RowIndex].Cells["Show"].Value);
@@ -238,20 +238,13 @@ namespace GazethruApps
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Slider", connection);
+              "SELECT  ISNULL (MAX(No), 0) FROM Slider", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    LastID = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                LastID = reader.GetInt32(0);
             }
             reader.Close();
             connection.Close();
@@ -260,20 +253,13 @@ namespace GazethruApps
         public void GetFirstID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MIN(No) FROM Slider", connection);
+              "SELECT ISNULL (MIN(No), 0) FROM Slider", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    FirstID = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                FirstID = reader.GetInt32(0);
             }
             reader.Close();
             connection.Close();

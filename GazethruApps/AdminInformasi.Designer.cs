@@ -123,7 +123,6 @@
             this.textBoxIsi.Size = new System.Drawing.Size(528, 456);
             this.textBoxIsi.TabIndex = 11;
             this.textBoxIsi.Text = "";
-            this.textBoxIsi.TextChanged += new System.EventHandler(this.textBoxIsi_TextChanged);
             // 
             // labelIsi
             // 

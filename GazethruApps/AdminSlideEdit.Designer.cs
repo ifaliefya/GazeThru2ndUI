@@ -103,7 +103,7 @@
             // 
             // textBoxJudul
             // 
-            this.textBoxJudul.ForeColor = System.Drawing.Color.White;
+            this.textBoxJudul.ForeColor = System.Drawing.Color.Black;
             this.textBoxJudul.Location = new System.Drawing.Point(120, 60);
             this.textBoxJudul.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxJudul.Name = "textBoxJudul";
@@ -153,7 +153,7 @@
             this.MaximizeBox = false;
             this.Name = "AdminSlideEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit Slider";
+            this.Text = "Edit Slideshow";
             this.Load += new System.EventHandler(this.AdminSlideEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

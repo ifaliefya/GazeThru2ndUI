@@ -22,7 +22,6 @@ namespace GazethruApps
         int counter = 0;
         int maxCounter;
         int nowShowing;
-        Object[] numb;
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
@@ -83,14 +82,20 @@ namespace GazethruApps
             string SelectQuery = "SELECT No FROM Kegiatan WHERE Show = 1;";
             SqlCommand command = new SqlCommand(SelectQuery, con);
             SqlDataReader read = command.ExecuteReader();
-            while (read.Read())
+            if (read.HasRows)
             {
-                numb = new object[read.FieldCount];
-                ShowID.Add((int)read.GetValue(0));
+                while (read.Read())
+                {
+                    ShowID.Add((int)read.GetValue(0));
+                }
+                nowShowing = ShowID[0];
+                maxCounter = ShowID.Count;
+            }
+            else
+            {
+                maxCounter = 1;
             }
             con.Close();
-            nowShowing = ShowID[0];
-            maxCounter = ShowID.Count;
 
         }
 
@@ -146,14 +151,16 @@ namespace GazethruApps
                 }
                 else
                 {
-                    pictureBox1.Image = null; //gambar default
+                    Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+                    pictureBox1.Image = bmp;
                 }
             }
             else
             {
-                lblJudul.Text = "";
-                textBoxIsi.Text = "";
-                pictureBox1.Image = null;
+                lblJudul.Text = "Tidak ada konten";
+                textBoxIsi.Text = "Tidak ada konten";
+                Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
+                pictureBox1.Image = bmp;
             }
             con.Close();
 

@@ -49,20 +49,13 @@ namespace GazethruApps
         public void GetLastID(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand(
-              "SELECT MAX(No) FROM Slider", connection);
+              "SELECT ISNULL (MAX(No), 0) FROM Slider", connection);
             connection.Open();
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    infoIDlast = reader.GetInt32(0);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
+                infoIDlast = reader.GetInt32(0);
             }
             reader.Close();
             connection.Close();
